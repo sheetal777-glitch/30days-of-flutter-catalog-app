@@ -47,7 +47,8 @@ class MyDrawer extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
                 textScaleFactor: 1.2,
               ),
-            ),ListTile(
+            ),
+            ListTile(
               leading: Icon(
                 CupertinoIcons.mail,
                 color: Colors.white,
