@@ -1,6 +1,5 @@
 import 'package:catalog_app/models/catalog.dart';
 import 'package:catalog_app/widgets/drawer.dart';
-import 'package:catalog_app/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -14,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   final int days = 30;
 
   @override
-  void initState() {
+  void initState() {   
     super.initState();
     loadData();
   }
