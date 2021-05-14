@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  TextEditingController username = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Material(
