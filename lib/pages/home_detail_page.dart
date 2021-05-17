@@ -1,5 +1,4 @@
 import 'package:catalog_app/models/catalog.dart';
-import 'package:catalog_app/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -10,12 +9,12 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.canvasColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           buttonPadding: EdgeInsets.zero,
           alignment: MainAxisAlignment.spaceBetween,
@@ -26,12 +25,12 @@ class HomeDetailPage extends StatelessWidget {
               child: "Add to cart".text.xl.make(),
               style: ButtonStyle(
                 backgroundColor:
-                    MaterialStateProperty.all(MyTheme.darkBluishColor),
+                    MaterialStateProperty.all(context.theme.buttonColor),
                 shape: MaterialStateProperty.all(StadiumBorder()),
               ),
-            ).wh(120, 50)
+            ).wh(120, 40)
           ],
-        ).p32(),
+        ).p16(),
       ),
       body: SafeArea(
         bottom: false,
@@ -45,14 +44,14 @@ class HomeDetailPage extends StatelessWidget {
               child: VxArc(
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
-                height: 30.0,
+                height: 20.0,
                 child: Container(
                   width: context.screenWidth,
-                  color: Colors.white,
+                  color: context.cardColor,
                   child: Column(
                     children: [
                       catalog.name!.text.xl4
-                          .color(MyTheme.darkBluishColor)
+                          .color(context.accentColor)
                           .bold
                           .make(),
                       catalog.desc!.text
@@ -64,9 +63,9 @@ class HomeDetailPage extends StatelessWidget {
                           .text
                           .textStyle(context.captionStyle!)
                           .make()
-                          .p16()
+                          .p8()
                     ],
-                  ).py64(),
+                  ).py32(),
                 ),
               ),
             ),
